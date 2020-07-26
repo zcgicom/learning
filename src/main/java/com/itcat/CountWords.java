@@ -2,6 +2,9 @@ package com.itcat;
 
 import java.util.*;
 
+/**
+ *将字符串中单词按首字母大小排序(不区分大小写)，并打印出现的次数
+ */
 public class CountWords {
     public static void main(String[] args) {
 //        countWords(" Hi, this is first line. This is second line.");

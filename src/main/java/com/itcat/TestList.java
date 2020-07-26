@@ -1,4 +1,4 @@
-package com.itcat.learning;
+package com.itcat;
 
 import java.util.ArrayList;
 import java.util.Iterator;
