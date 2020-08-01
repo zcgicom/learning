@@ -10,8 +10,7 @@ public class TestQuickSort {
         int[] array = {2,3,1,5,7,0,4,9,11,34,87,6,4};
         int left = 0;
         int right = array.length - 1;
-//        quickSort(array,left,right);
-        quick(array,left,right);
+        quickSort(array,left,right);
         System.out.println(Arrays.toString(array));
     }
 
@@ -48,23 +47,6 @@ public class TestQuickSort {
         //递归调用右半数组
         quickSort(array, j+1, right);
 
-    }
-    //
-    public static void quick(int[] arr, int left, int high){
-        if(left >= high){return;}
-        int i = left;
-        int j = high;
-        int pivod = arr[left];
-        while (i  < j){
-            while (i<j && pivod<=arr[j]) j--;
-            while (i<j && pivod>=arr[i]) i++;
-            if(i<j){
-                swap(arr,i,j);
-            }
-        }
-        swap(arr,i,left);
-        quick(arr,left,i-1);
-        quick(arr,i+1,high);
     }
     //交换
     public static void swap(int[] arr, int i, int j){
