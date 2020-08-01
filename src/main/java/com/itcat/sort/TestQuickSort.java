@@ -1,4 +1,4 @@
-package com.itcat;
+package com.itcat.sort;
 
 import java.util.Arrays;
 
