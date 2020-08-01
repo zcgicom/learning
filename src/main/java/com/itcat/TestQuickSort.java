@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class TestQuickSort {
     public static void main(String[] args) {
-        int[] array = {2,3,1,5,7,0,4,9,11,34,87};
+        int[] array = {2,3,1,5,7,0,4,9,11,34,87,6,4};
         int left = 0;
         int right = array.length - 1;
 //        quickSort(array,left,right);
@@ -39,13 +39,12 @@ public class TestQuickSort {
             if (i<j) {
                 swap(array,i,j);
             }
-
         }
         //最后将基准为与i和j相等位置的数字交换
         array[left] = array[i];
         array[i] = temp;
         //递归调用左半数组
-        quickSort(array, left, j-1);
+        quickSort(array, left, j-1);//此时i = j
         //递归调用右半数组
         quickSort(array, j+1, right);
 
@@ -53,23 +52,19 @@ public class TestQuickSort {
     //
     public static void quick(int[] arr, int left, int high){
         if(left >= high){return;}
-        int pivod = arr[left];
         int i = left;
-        int j =high;
-        while (i<j){
-            while (arr[j] >= pivod && i < j){
-                j--;
-            }
-            while (arr[i] <= pivod && i < j){
-                i++;
-            }
-            if(i < j){
+        int j = high;
+        int pivod = arr[left];
+        while (i  < j){
+            while (i<j && pivod<=arr[j]) j--;
+            while (i<j && pivod>=arr[i]) i++;
+            if(i<j){
                 swap(arr,i,j);
             }
         }
         swap(arr,i,left);
-        quick(arr,left,j-1);
-        quick(arr,j+1,high);
+        quick(arr,left,i-1);
+        quick(arr,i+1,high);
     }
     //交换
     public static void swap(int[] arr, int i, int j){
