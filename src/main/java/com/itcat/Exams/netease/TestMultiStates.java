@@ -1,4 +1,4 @@
-package com.itcat.netease;
+package com.itcat.Exams.netease;
 
 /**
  * 考点：Java--多态

@@ -1,4 +1,4 @@
-package com.itcat.netease;
+package com.itcat.Exams.netease;
 
 import java.util.Arrays;
 import java.util.Scanner;

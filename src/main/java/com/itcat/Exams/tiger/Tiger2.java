@@ -1,4 +1,4 @@
-package com.itcat.tiger;
+package com.itcat.Exams.tiger;
 
 import java.util.Scanner;
 

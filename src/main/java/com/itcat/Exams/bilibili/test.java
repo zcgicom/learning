@@ -1,4 +1,4 @@
-package com.itcat.bilibili;
+package com.itcat.Exams.bilibili;
 
 import java.util.Scanner;
 
