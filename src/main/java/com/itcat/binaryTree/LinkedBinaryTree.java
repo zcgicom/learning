@@ -6,17 +6,20 @@ package com.itcat.binaryTree;
 public class LinkedBinaryTree implements BinaryTree {
     private Node root;//代表根节点，不是根节点，是指向根节点的
     private int size;//树的节点数量
+    private String str;//经过序列化生成的二叉树字符串
 
     public LinkedBinaryTree() {
     }
 
-    public LinkedBinaryTree(Node root) {
-        this.root = root;
-    }
-
-    public LinkedBinaryTree(Node root, int size) {
+    public LinkedBinaryTree(Node root, int size, String str) {
         this.root = root;
         this.size = size;
+        this.str  = str;
+    }
+
+    public LinkedBinaryTree(Node root, String str) {
+        this.root = root;
+        this.str  = str;
     }
 
     public boolean isEmpty() {
@@ -104,4 +107,51 @@ public class LinkedBinaryTree implements BinaryTree {
             System.out.printf(root.val+"\t");
         }
     }
+
+    @Override
+    public String SerializeBinary() {
+        StringBuilder str = new StringBuilder();
+        SerializeBinary(root,str);
+        return str.toString();
+    }
+
+    private void SerializeBinary(Node root,StringBuilder str) {
+        if(root != null){
+            str.append(root.val + "!");
+            SerializeBinary(root.left,str);
+            SerializeBinary(root.right,str);
+        }else{
+            str.append("#!");
+        }
+
+    }
+
+    @Override
+    public Node DeserializeBinary() {
+        return DeserializeBinary(str);
+    }
+
+    private Node DeserializeBinary(String str) {
+        if(str.length() == 0){
+            return null;
+        }
+        String[] strs = str.split("!");
+        return DeserializeBinary(strs);
+    }
+    int index = -1;
+    private Node DeserializeBinary(String[] strs) {
+        index++;
+        if(index == strs.length){
+            return null;
+        }
+        if(!strs[index].equals("#")){
+            Node head = new Node();
+            head.val = Integer.parseInt(strs[index]);
+            head.left = DeserializeBinary(strs);
+            head.right = DeserializeBinary(strs);
+            return head;
+        }
+        return null;
+    }
+
 }

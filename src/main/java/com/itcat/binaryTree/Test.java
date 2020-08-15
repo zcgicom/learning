@@ -21,7 +21,8 @@ public class Test {
         Node node2 = new Node(2,node3,node6);
         Node root = new Node(1,node4,node2);
 
-        BinaryTree binaryTree = new LinkedBinaryTree(root);
+        String str = "1!4!#!5!#!#!2!3!#!#!6!#!7!#!#!";
+        BinaryTree binaryTree = new LinkedBinaryTree(root,str);
         //判断树是否为空
         System.out.println(binaryTree.isEmpty());
         //先序遍历
@@ -36,5 +37,8 @@ public class Test {
         System.out.println();
         //二叉树中节点数量
         System.out.printf("二叉树中节点的数量为：%d",binaryTree.size());
+        System.out.println();
+        System.out.println("序列化后的二叉树为："+binaryTree.SerializeBinary());
+        System.out.println("反序列化后的二叉树为："+binaryTree.DeserializeBinary());
     }
 }

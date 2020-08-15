@@ -35,6 +35,7 @@ public class test {
         }
         return sum;
     }
+
     public static int getNum(int N){
         if(N<0||N>1024) return 0;
         int mo = 1024 - N;
