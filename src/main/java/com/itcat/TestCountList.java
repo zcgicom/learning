@@ -26,7 +26,7 @@ public class TestCountList {
         }
         return 0;
     }
-    //
+    //遍历
     public static int getNum(int[] array){
         int[] arr = new int[array.length];
         for (int i = 0; i < array.length; i++) {
