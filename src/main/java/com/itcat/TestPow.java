@@ -9,6 +9,15 @@ public class TestPow {
         double base = 2;
         System.out.println(Power1(base,exponent));
         System.out.println(Power2(base,exponent));
+
+        Integer i1 = -128;
+        int i2 = -128;
+        Integer i3 = Integer.valueOf(-128);
+        Integer i4 = new Integer(-128);
+
+        System.out.println(i3==i4);
+        System.out.println(i1==i3);
+        System.out.println(i1==i2);
     }
     //
     public static double Power1(double base, int exponent) {

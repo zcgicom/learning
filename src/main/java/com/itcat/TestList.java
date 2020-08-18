@@ -62,7 +62,6 @@ public class TestList {
         System.out.println("\n增强for循环遍历：");
         for (String s : list) {
             System.out.print(s+" ");
-
         }
     }
 }
