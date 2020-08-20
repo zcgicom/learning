@@ -42,13 +42,9 @@ public class CountWords {
         Set set=map.keySet();
         Object[] arr=set.toArray();
         Arrays.sort(arr);
-//        for(Object key:arr){
-//            System.out.println(key);
-//        }
         for(Object key:arr){
             System.out.println(key+": "+map.get(key));
         }
-
         // 遍历map集合
 //        for (Map.Entry<String, Integer> entry : map.entrySet()) {
 //            System.out.println(entry.getKey() + ":" + entry.getValue());

@@ -7,12 +7,12 @@ import java.util.LinkedList;
  */
 public class RepeatingEement {
     public static void main(String[] args) {
-        int [] numbers = {2,3,1,0,2,5,3};
+        int [] numbers = {2,3,1,0,2,5,3,0};
         int length = numbers.length;
         LinkedList<Integer> list = new LinkedList<Integer>();
 
         if(numbers == null||length<=0){
-            System.out.println(list);;
+            System.out.println(list);
         }
 
         for(int i=0;i<length;i++){

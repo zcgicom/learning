@@ -1,7 +1,7 @@
 package com.itcat;
 
 /**
- * 遍历二维数组 -- 二分查找或遍历
+ * 遍历二维数组（有序） -- 二分查找或遍历
  */
 public class TestTwoList {
     public static void main(String[] args) {
