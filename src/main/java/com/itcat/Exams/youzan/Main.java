@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {2,3,4,4,};
+        int[] arr = {2,3,4,4};
         System.out.println(maxSumDivThree(arr));
     }
         /**

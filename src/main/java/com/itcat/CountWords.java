@@ -45,9 +45,19 @@ public class CountWords {
         for(Object key:arr){
             System.out.println(key+": "+map.get(key));
         }
-        // 遍历map集合
-//        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-//            System.out.println(entry.getKey() + ":" + entry.getValue());
-//        }
+        System.out.println("======忽略字符大小写进行排序=======");
+        for (Object key:sortIngoreCase(map)) {
+            System.out.println(key+":"+map.get(key));
+        }
+    }
+    public static List<String> sortIngoreCase(HashMap<String ,Integer> map){
+        List<String> list = new ArrayList<String>(map.keySet());//Map转为List
+        Collections.sort(list, new Comparator<String>() {//重写排序方法，具体用法参考TestSortIgnoreCase和TestPrintMinNumber文件
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.toUpperCase().compareTo(o2.toUpperCase());
+            }
+        });
+        return list;
     }
 }
